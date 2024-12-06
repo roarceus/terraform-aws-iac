@@ -63,7 +63,17 @@ This project focuses on setting up networking resources such as VPC, Internet Ga
     record_type    = "A"
     record_ttl     = 60
     ```
-5. Running the VPC, EC2, and RDS instances with S3 bucket - 
+
+5. Importing SSL certificates
+Import your ssl certificates with the following command - 
+```
+aws acm import-certificate --certificate fileb://path/file.crt \
+                           --private-key fileb://path/file.pem \
+                           --certificate-chain fileb://path/file.ca-bundle \
+                           --region <your-region>
+```
+
+6. Running the VPC, EC2, and RDS instances with S3 bucket - 
    1. Use the correct profile - ```export AWS_PROFILE=<your_profile>```.
    2. Initialize terraform in your repository - ```terraform init```.
    3. Rewrite Terraform configuration files to correct format - ```terraform fmt```.

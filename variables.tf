@@ -69,6 +69,16 @@ variable "app_port" {
   type        = string
 }
 
+variable "launch_template_name" {
+  description = "Name for launch template"
+  type        = string
+}
+
+variable "asg_name" {
+  description = "Name for auto scaling group"
+  type        = string
+}
+
 variable "asg_desired_capacity" {
   description = "Application port"
   type        = number
@@ -139,10 +149,10 @@ variable "db_user" {
   type        = string
 }
 
-variable "db_password" {
-  description = "Database password"
-  type        = string
-}
+# variable "db_password" {
+#   description = "Database password"
+#   type        = string
+# }
 
 variable "db_port" {
   description = "Application port"
@@ -161,5 +171,20 @@ variable "domain_name" {
 
 variable "record_type" {
   description = "Route53 Record Type"
+  type        = string
+}
+
+variable "lambda_file_path" {
+  description = "File path for Lambda function"
+  type        = string
+}
+
+variable "SENDGRID_API_KEY" {
+  description = "API Key for Sendgrid mailing service"
+  type        = string
+}
+
+variable "sender_email" {
+  description = "Email ID for sending emails"
   type        = string
 }
